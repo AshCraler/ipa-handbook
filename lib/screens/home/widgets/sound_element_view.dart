@@ -23,6 +23,7 @@ class PreviewElement extends StatelessWidget {
       ),
       child: Container(
         margin: InfinitePadding.all,
+        padding: InfinitePadding.all,
         decoration: BoxDecoration(
           border: Border.all(color: context.outlineColor),
           borderRadius: BorderRadius.circular(InfiniteSize.cardRadius),

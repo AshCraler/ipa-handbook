@@ -47,3 +47,7 @@ app.*.map.json
 
 # Visual Studio Code related
 .vscode/*
+
+# Environment
+.env
+*.g.dart
