@@ -5,7 +5,7 @@ import 'package:ipa_handbook/theme/infinite_theme.dart';
 import 'package:ipa_handbook/utils/shared/shared_widgets.dart';
 import 'package:ipa_handbook/utils/sizes/sizes.dart';
 
-import '../models/sound_preview.dart';
+import '../../../models/sound_preview.dart';
 
 class PreviewElement extends StatelessWidget {
   const PreviewElement({

@@ -1,11 +1,11 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ipa_handbook/screens/sound/sound_detail.dart';
+import 'package:ipa_handbook/ui/sound/sound_detail.dart';
 
 import '../../config/router/screen_name.dart';
-import '../../screens/home/home_screen.dart';
-import '../../screens/settings/setting_screen.dart';
+import '../../ui/home/screens/home_screen.dart';
+import '../../ui/settings/setting_screen.dart';
 import '../../widgets/error_widgets/error_page.dart';
 
 ///Class to initialize static router of app
