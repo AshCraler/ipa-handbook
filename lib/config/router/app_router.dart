@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ipa_handbook/screens/sound/sound_detail.dart';
 
 import '../../config/router/screen_name.dart';
 import '../../screens/home/home_screen.dart';
@@ -34,6 +35,14 @@ class AppRouter {
         path: BaseScreen.settings.routePath,
         name: BaseScreen.settings.name,
         builder: (context, state) => const SettingScreen(),
+      ),
+
+      GoRoute(
+        path: BaseScreen.soundDetail.routePath,
+        name: BaseScreen.soundDetail.name,
+        builder: (context, state) => SoundDetailScreen(
+          sound: state.queryParameters['sound'],
+        ),
       ),
 
       ///Home route

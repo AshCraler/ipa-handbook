@@ -1,5 +1,6 @@
 enum BaseScreen {
   home,
+  soundDetail,
   settings,
 }
 
