@@ -4,7 +4,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../l10n/infinite_localizations.dart';
 
 class LocaleProvider extends ChangeNotifier {
-  String _languageCode = InfiniteLocalizations.supportedLocales.first.languageCode;
+  String _languageCode =
+      InfiniteLocalizations.supportedLocales.first.languageCode;
 
   String get languageCode => _languageCode;
 

@@ -132,7 +132,8 @@ class CustomColors extends ThemeExtension<CustomColors> {
       orange: Color.lerp(orange, other.orange, t),
       onOrange: Color.lerp(onOrange, other.onOrange, t),
       orangeContainer: Color.lerp(orangeContainer, other.orangeContainer, t),
-      onOrangeContainer: Color.lerp(onOrangeContainer, other.onOrangeContainer, t),
+      onOrangeContainer:
+          Color.lerp(onOrangeContainer, other.onOrangeContainer, t),
       sourceGreen: Color.lerp(sourceGreen, other.sourceGreen, t),
       green: Color.lerp(green, other.green, t),
       onGreen: Color.lerp(onGreen, other.onGreen, t),

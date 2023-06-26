@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ipa_handbook/ui/sound/sound_detail.dart';
+import 'package:ipa_handbook/ui/sound/sound_detail_screen.dart';
 
 import '../../config/router/screen_name.dart';
 import '../../ui/home/screens/home_screen.dart';

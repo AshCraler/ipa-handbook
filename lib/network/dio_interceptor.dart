@@ -71,8 +71,10 @@ class DioInterceptor extends Interceptor {
     response.headers.forEach((k, v) => headerMessage += '► $k: $v\n');
 
     const JsonEncoder encoder = JsonEncoder.withIndent('  ');
-    final String prettyJson =
-        encoder.convert(response.data).replaceAll("\n", " ").replaceAll(" ", "");
+    final String prettyJson = encoder
+        .convert(response.data)
+        .replaceAll("\n", " ")
+        .replaceAll(" ", "");
 
     log.d(
       // ignore: unnecessary_null_comparison

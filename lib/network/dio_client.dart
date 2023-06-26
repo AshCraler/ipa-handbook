@@ -42,7 +42,8 @@ class DioClient {
     Map<String, dynamic>? queryParameters,
   }) async {
     try {
-      return await dio.get<T>(baseUrlTest + url, queryParameters: queryParameters);
+      return await dio.get<T>(baseUrlTest + url,
+          queryParameters: queryParameters);
     } on DioException catch (e) {
       dev.log("DIO CLIENT DioError ${e.toString()}");
       throw Exception(e.message);

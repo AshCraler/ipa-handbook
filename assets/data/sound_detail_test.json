@@ -1,0 +1,61 @@
+{
+    "crawl_key": "st",
+    "name": "st",
+    "type": "",
+    "subType": "",
+    "guideTextVi": "",
+    "guideVideo": "/st/video.mp4",
+    "guideText": "",
+    "simpleExamples": [
+        {
+            "text": "story",
+            "audio": "/st/audio_example_7fd30b2b-a320-4b4e-8bc2-be52ab1aa2c1.mp3"
+        },
+        {
+            "text": "stream",
+            "audio": "/st/audio_example_42476a96-cf3b-401c-8425-88d5be2baa4c.mp3"
+        },
+        {
+            "text": "distribute",
+            "audio": "/st/audio_example_8192d4bb-bae1-49bf-a2db-20c99aa9d121.mp3"
+        }
+    ],
+    "compareExamples": [
+        {
+            "text": "stocks",
+            "audio": "/st/audio_example_19118879-6fc0-443f-a410-bdfc9b7e9144.mp3"
+        },
+        {
+            "text": "stranded",
+            "audio": "/st/audio_example_4b1e57d5-791e-4138-8284-24a86cebeed6.mp3"
+        },
+        {
+            "text": "stick",
+            "audio": "/st/audio_example_9e1fb135-c8fa-4347-96d1-82bd1700dfa2.mp3"
+        },
+        {
+            "text": "stare",
+            "audio": "/st/audio_example_5dd761d2-28bc-4ed4-a9e3-7efaef46550a.mp3"
+        },
+        {
+            "text": "straight",
+            "audio": "/st/audio_example_a340e658-28b2-4020-a1a2-a2045928c163.mp3"
+        },
+        {
+            "text": "distribute",
+            "audio": "/st/audio_example_6e25c2cd-215d-4928-b75c-2acff7a121ea.mp3"
+        },
+        {
+            "text": "industry",
+            "audio": "/st/audio_example_782a4bd5-7367-48e4-8932-3f459fa51c34.mp3"
+        }
+    ],
+    "positionExamples": [],
+    "sentenceExamples": [
+        {
+            "text": "Stalling striped stars start stopping stormy stars.",
+            "audio": "/st/audio_example_0c54214b-7650-45b0-9264-ea7d6bb4ebf2.mp3"
+        }
+    ],
+    "practiceExamples": []
+}

@@ -93,27 +93,34 @@ extension FontStyleExtension on TextStyle {
   TextStyle get priceLarge => copyWith(fontSize: InfiniteFontSize.priceLarge);
 
   /// set color for Text
-  TextStyle get notice =>
-      copyWith(color: context?.colorScheme.error ?? InfiniteColorScheme.lightColorScheme.error);
+  TextStyle get notice => copyWith(
+      color: context?.colorScheme.error ??
+          InfiniteColorScheme.lightColorScheme.error);
 
-  TextStyle get onNotice =>
-      copyWith(color: context?.colorScheme.onError ?? InfiniteColorScheme.lightColorScheme.onError);
+  TextStyle get onNotice => copyWith(
+      color: context?.colorScheme.onError ??
+          InfiniteColorScheme.lightColorScheme.onError);
 
-  TextStyle get primary =>
-      copyWith(color: context?.colorScheme.primary ?? InfiniteColorScheme.lightColorScheme.primary);
+  TextStyle get primary => copyWith(
+      color: context?.colorScheme.primary ??
+          InfiniteColorScheme.lightColorScheme.primary);
 
   TextStyle get onPrimary => copyWith(
-      color: context?.colorScheme.onPrimary ?? InfiniteColorScheme.lightColorScheme.onPrimary);
+      color: context?.colorScheme.onPrimary ??
+          InfiniteColorScheme.lightColorScheme.onPrimary);
 
   TextStyle get secondary => copyWith(
-      color: context?.colorScheme.secondary ?? InfiniteColorScheme.lightColorScheme.secondary);
+      color: context?.colorScheme.secondary ??
+          InfiniteColorScheme.lightColorScheme.secondary);
 
   TextStyle get tertiary => copyWith(
-      color: context?.colorScheme.tertiary ?? InfiniteColorScheme.lightColorScheme.tertiary);
+      color: context?.colorScheme.tertiary ??
+          InfiniteColorScheme.lightColorScheme.tertiary);
 
   ///black text
   TextStyle get normal => copyWith(
-      color: context?.colorScheme.onSurface ?? InfiniteColorScheme.lightColorScheme.onSurface);
+      color: context?.colorScheme.onSurface ??
+          InfiniteColorScheme.lightColorScheme.onSurface);
 
   ///gray text
   TextStyle get darkGray => copyWith(
@@ -121,12 +128,15 @@ extension FontStyleExtension on TextStyle {
           InfiniteColorScheme.lightColorScheme.onSurfaceVariant);
 
   TextStyle get disable => copyWith(
-      color: context?.disableTextColor ?? InfiniteColorScheme.lightColorScheme.disableTextColor);
+      color: context?.disableTextColor ??
+          InfiniteColorScheme.lightColorScheme.disableTextColor);
 
-  TextStyle get red =>
-      copyWith(color: context?.colorScheme.error ?? InfiniteColorScheme.lightColorScheme.error);
-  TextStyle get onRed =>
-      copyWith(color: context?.colorScheme.onError ?? InfiniteColorScheme.lightColorScheme.onError);
+  TextStyle get red => copyWith(
+      color: context?.colorScheme.error ??
+          InfiniteColorScheme.lightColorScheme.error);
+  TextStyle get onRed => copyWith(
+      color: context?.colorScheme.onError ??
+          InfiniteColorScheme.lightColorScheme.onError);
   TextStyle get onRedContainer => copyWith(
       color: context?.colorScheme.onErrorContainer ??
           InfiniteColorScheme.lightColorScheme.onErrorContainer);

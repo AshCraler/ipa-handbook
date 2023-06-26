@@ -113,13 +113,17 @@ class InfiniteLocalizations {
 
   static Locale findLocale(String? code) {
     return _sortedSupportedLocales.firstWhere(
-        (element) => element.languageCode.toLowerCase() == code?.toLowerCase(), orElse: () {
+        (element) => element.languageCode.toLowerCase() == code?.toLowerCase(),
+        orElse: () {
       return _sortedSupportedLocales.first;
     });
   }
 
   static String getLanguageName(String code) {
-    return _languages.firstWhere((element) => element.languageCode == code).name ?? "";
+    return _languages
+            .firstWhere((element) => element.languageCode == code)
+            .name ??
+        "";
   }
 }
 
