@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../utils/services/navigator_service.dart';
-import '../../utils/shared/shared_widgets.dart';
-import '../../utils/sizes/sizes.dart';
+import '../utils/services/navigator_service.dart';
+import '../utils/shared/shared_widgets.dart';
+import '../utils/sizes/sizes.dart';
 import '../colors/color_schemes.dart';
 
 part 'appbar_theme.dart';

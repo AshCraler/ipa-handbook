@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ipa_handbook/config/router/screen_name.dart';
 import 'package:ipa_handbook/theme/infinite_theme.dart';
-import 'package:ipa_handbook/utils/shared/shared_widgets.dart';
-import 'package:ipa_handbook/utils/sizes/sizes.dart';
 
 import '../../../models/sound_preview.dart';
 

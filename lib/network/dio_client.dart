@@ -5,9 +5,8 @@ import '../config/env/app_env.dart';
 import 'dio_interceptor.dart';
 
 class DioClient {
-  String get baseUrlTest {
-    final url = AppEnv.HOST_URL;
-    return url;
+  static String get baseUrlTest {
+    return AppEnv.HOST_URL;
   }
 
   late Dio _dio;
@@ -37,31 +36,35 @@ class DioClient {
       // ),
       );
 
-  Future<Response<T>> getRequest<T>(
+  Future<T> getRequest<T>(
     String url, {
     Map<String, dynamic>? queryParameters,
   }) async {
     try {
-      return await dio.get<T>(baseUrlTest + url,
-          queryParameters: queryParameters);
+      return (await dio.get<T>(
+        baseUrlTest + url,
+        queryParameters: queryParameters,
+      ))
+          .data!;
     } on DioException catch (e) {
       dev.log("DIO CLIENT DioError ${e.toString()}");
       throw Exception(e.message);
     }
   }
 
-  Future<Response<T>> postRequest<T>(
+  Future<T> postRequest<T>(
     String url, {
     Map<String, dynamic>? parameters,
     required Map<String, dynamic> data,
   }) async {
     try {
       var formData = FormData.fromMap(data);
-      return await dio.post<T>(
+      return (await dio.post<T>(
         url,
         queryParameters: parameters,
         data: formData,
-      );
+      ))
+          .data!;
     } on DioException catch (e) {
       dev.log("DIO CLIENT DioError ${e.toString()}");
       throw Exception(e.message);

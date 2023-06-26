@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ipa_handbook/config/di/dependency_injection.dart';
 import 'package:ipa_handbook/theme/infinite_theme.dart';
-import 'package:ipa_handbook/utils/shared/shared_widgets.dart';
-import 'package:ipa_handbook/utils/sizes/sizes.dart';
-import 'package:video_player/video_player.dart';
+import 'package:ipa_handbook/ui/sound/widgets/video_view.dart';
+
+import '../../models/sound_detail/sound_detail.dart';
+import '../../network/network.dart';
 
 class SoundDetailScreen extends StatefulWidget {
   const SoundDetailScreen({
@@ -16,98 +18,65 @@ class SoundDetailScreen extends StatefulWidget {
 }
 
 class _SoundDetailScreenState extends State<SoundDetailScreen> {
-  late final VideoPlayerController _controller;
-  late final Future<void> _initializeVideoPlayerFuture;
+  late final Future<SoundDetail> _soundDetail;
+
+  Future<SoundDetail> _fetchSoundDetail() async {
+    final response = await getIt.get<DioClient>().getRequest<String>(
+          'api/sounds/${widget.sound}',
+        );
+    return SoundDetail.fromJson(response);
+  }
 
   @override
   void initState() {
     super.initState();
-
-    _controller = VideoPlayerController.network(
-        'https://ipa-api.vercel.app/data/st/video.mp4');
-
-    _initializeVideoPlayerFuture = _controller.initialize();
-    _controller.addListener(_updateVideoState);
-  }
-
-  void _updateVideoState() {
-    if (!_controller.value.isPlaying) {
-      setState(() {});
-    }
-  }
-
-  @override
-  void dispose() {
-    _controller.removeListener(_updateVideoState);
-    _controller.dispose();
-    super.dispose();
+    _soundDetail = _fetchSoundDetail();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.sound),
+        title: Text('/${widget.sound}/'),
       ),
       body: Center(
-        child: ListView(
-          children: [
-            _buildVideo(),
-          ],
+        child: FutureBuilder<SoundDetail>(
+          future: _soundDetail,
+          builder: (BuildContext context, AsyncSnapshot<SoundDetail> asyncSnapshot) {
+            switch (asyncSnapshot.connectionState) {
+              //Loading
+              case ConnectionState.waiting:
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+
+              //Loaded
+              case ConnectionState.done:
+                if (asyncSnapshot.hasError) {
+                  return Center(
+                    child: Text(asyncSnapshot.error.toString()),
+                  );
+                }
+                final data = asyncSnapshot.data as SoundDetail;
+
+                return _buildBody(context, data);
+
+              //Default
+              default:
+                return const Text('Something went wrong! Please try again later.');
+            }
+          },
         ),
       ),
     );
   }
 
-  Widget _buildVideo() {
-    return Padding(
+  Widget _buildBody(BuildContext context, SoundDetail data) {
+    return ListView(
       padding: InfinitePadding.all,
-      child: FutureBuilder(
-        future: _initializeVideoPlayerFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            return AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: Stack(
-                children: [
-                  VideoPlayer(_controller),
-                  Center(
-                    child: Container(
-                      padding: EdgeInsets.all(InfiniteSize.paddingS),
-                      decoration: BoxDecoration(
-                        color: context.colorScheme.tertiary.withOpacity(0.8),
-                        borderRadius:
-                            BorderRadius.circular(InfiniteSize.cardRadius),
-                      ),
-                      child: IconButton(
-                        icon: Icon(
-                          _controller.value.isPlaying
-                              ? Icons.pause
-                              : Icons.play_arrow,
-                          color: context.colorScheme.onTertiary,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            if (_controller.value.isPlaying) {
-                              _controller.pause();
-                            } else {
-                              _controller.play();
-                            }
-                          });
-                        },
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            );
-          } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
+      children: [
+        VideoView(videoUrl: data.guideVideo),
+      ],
     );
   }
 }

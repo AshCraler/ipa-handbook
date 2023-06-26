@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -54,15 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             }
 
-            final List list =
-                jsonDecode((snapshot.data as Response<String>).data as String)
-                    as List;
+            final List list = jsonDecode(snapshot.data!) as List;
             final List<SoundPreview> sounds =
                 list.map((e) => SoundPreview.fromJson(jsonEncode(e))).toList();
             return GridView.builder(
                 itemCount: sounds.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
                 itemBuilder: (context, index) {
                   return PreviewElement(
                     soundPreview: sounds[index],
