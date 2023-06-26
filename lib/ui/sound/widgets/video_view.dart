@@ -69,7 +69,15 @@ class _VideoViewState extends State<VideoView> {
       aspectRatio: _controller.value.aspectRatio,
       child: Stack(
         children: [
-          VideoPlayer(_controller),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: context.colorScheme.outline,
+                width: .5,
+              ),
+            ),
+            child: VideoPlayer(_controller),
+          ),
           Center(
             child: Container(
               padding: EdgeInsets.all(InfiniteSize.paddingS),
