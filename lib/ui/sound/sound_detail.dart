@@ -5,7 +5,7 @@ class SoundDetailScreen extends StatefulWidget {
     super.key,
     required this.sound,
   });
-  final String? sound;
+  final String sound;
 
   @override
   State<SoundDetailScreen> createState() => _SoundDetailScreenState();
@@ -16,10 +16,10 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sound detail'),
+        title: Text(widget.sound),
       ),
       body: Center(
-        child: Text('${widget.sound}'),
+        child: ListView(children: []),
       ),
     );
   }

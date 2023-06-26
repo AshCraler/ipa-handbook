@@ -41,7 +41,7 @@ class AppRouter {
         path: BaseScreen.soundDetail.routePath,
         name: BaseScreen.soundDetail.name,
         builder: (context, state) => SoundDetailScreen(
-          sound: state.queryParameters['sound'],
+          sound: state.queryParameters['sound']!,
         ),
       ),
 
