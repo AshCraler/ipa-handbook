@@ -1,61 +1,99 @@
 {
-    "crawl_key": "st",
-    "name": "st",
+    "crawl_key": "b",
+    "name": "b",
     "type": "",
     "subType": "",
     "guideTextVi": "",
-    "guideVideo": "/st/video.mp4",
-    "guideText": "",
+    "guideVideo": "/b/video.mp4",
+    "guideText": "Your lips should be closed and placed against one another. Vibrate your vocal cords, and push air out of your mouth against your closed lips. Release the air in one moment, as your vocal cords continue to vibrate.",
     "simpleExamples": [
         {
-            "text": "story",
-            "audio": "/st/audio_example_7fd30b2b-a320-4b4e-8bc2-be52ab1aa2c1.mp3"
+            "text": "buy",
+            "audio": "/b/audio_example_b02c971d-ab95-49db-8f17-8c61d21007a8.mp3"
         },
         {
-            "text": "stream",
-            "audio": "/st/audio_example_42476a96-cf3b-401c-8425-88d5be2baa4c.mp3"
+            "text": "lab",
+            "audio": "/b/audio_example_144fabc8-e524-4fe6-8e53-6de773381b53.mp3"
         },
         {
-            "text": "distribute",
-            "audio": "/st/audio_example_8192d4bb-bae1-49bf-a2db-20c99aa9d121.mp3"
+            "text": "bring",
+            "audio": "/b/audio_example_3fa7fead-b1be-433a-9c86-113c02dbddd1.mp3"
+        },
+        {
+            "text": "verb",
+            "audio": "/b/audio_example_49799340-07c7-48c1-adbf-9246258a5b2b.mp3"
+        },
+        {
+            "text": "about",
+            "audio": "/b/audio_example_a8dd7bec-be70-4303-9b7e-a9c989d11a2f.mp3"
+        },
+        {
+            "text": "black",
+            "audio": "/b/audio_example_68e99f8d-f1c2-4f3c-b3b3-72f2f847c47a.mp3"
         }
     ],
     "compareExamples": [
         {
-            "text": "stocks",
-            "audio": "/st/audio_example_19118879-6fc0-443f-a410-bdfc9b7e9144.mp3"
+            "text": "vest | best",
+            "audio": "/b/audio_example_a90b0d26-672e-495d-8aaa-a26fa006685a.mp3"
         },
         {
-            "text": "stranded",
-            "audio": "/st/audio_example_4b1e57d5-791e-4138-8284-24a86cebeed6.mp3"
+            "text": "peak | beak",
+            "audio": "/b/audio_example_1e7f481c-a9b7-4a99-9f69-b04cfa56a972.mp3"
         },
         {
-            "text": "stick",
-            "audio": "/st/audio_example_9e1fb135-c8fa-4347-96d1-82bd1700dfa2.mp3"
+            "text": "nap | nab",
+            "audio": "/b/audio_example_d4cdadc6-dca9-4d15-abfb-3e9cda3e8f0a.mp3"
         },
         {
-            "text": "stare",
-            "audio": "/st/audio_example_5dd761d2-28bc-4ed4-a9e3-7efaef46550a.mp3"
-        },
-        {
-            "text": "straight",
-            "audio": "/st/audio_example_a340e658-28b2-4020-a1a2-a2045928c163.mp3"
-        },
-        {
-            "text": "distribute",
-            "audio": "/st/audio_example_6e25c2cd-215d-4928-b75c-2acff7a121ea.mp3"
-        },
-        {
-            "text": "industry",
-            "audio": "/st/audio_example_782a4bd5-7367-48e4-8932-3f459fa51c34.mp3"
+            "text": "loaves | lobes",
+            "audio": "/b/audio_example_1a99f958-15c2-43b6-9b7b-aebcac65c9a1.mp3"
         }
     ],
-    "positionExamples": [],
+    "positionExamples": [
+        {
+            "text": "build",
+            "audio": "/b/audio_example_ba1ee299-34b1-450a-85c5-2c6189ccf31d.mp3"
+        },
+        {
+            "text": "balance",
+            "audio": "/b/audio_example_80d6ddb1-d8ac-42bc-9cf0-269f55a917e6.mp3"
+        },
+        {
+            "text": "bet",
+            "audio": "/b/audio_example_dcb24bb8-a08d-4833-873b-c02438f0a6c7.mp3"
+        },
+        {
+            "text": "able",
+            "audio": "/b/audio_example_e7247f1d-8c3e-4bea-8f12-76a3b9ffe94a.mp3"
+        },
+        {
+            "text": "branch",
+            "audio": "/b/audio_example_c9ecce54-5f0a-4407-82b7-be9728d5740e.mp3"
+        },
+        {
+            "text": "job",
+            "audio": "/b/audio_example_46ba085e-519d-4a82-a619-b10386c11001.mp3"
+        }
+    ],
     "sentenceExamples": [
         {
-            "text": "Stalling striped stars start stopping stormy stars.",
-            "audio": "/st/audio_example_0c54214b-7650-45b0-9264-ea7d6bb4ebf2.mp3"
+            "text": "Blue birds broke the bride’s big bonnet.",
+            "audio": "/b/audio_example_c41c3107-4492-41a8-8aa7-a9c188717cec.mp3"
+        },
+        {
+            "text": "The bear grabbed the brown blanket and bit it like sub.",
+            "audio": "/b/audio_example_33e4241d-ff0e-42f3-9e55-20c8d1cbc7a3.mp3"
         }
     ],
-    "practiceExamples": []
+    "practiceExamples": [
+        {
+            "text": "I’m studying business at Baruch College.",
+            "audio": "/b/audio_example_2e0b8d06-d2ce-444f-921e-ad650859aca0.mp3"
+        },
+        {
+            "text": "Can I have the bill, please?",
+            "audio": "/b/audio_example_87dd5e7c-5ac7-4038-93b6-ff07a2236053.mp3"
+        }
+    ]
 }
