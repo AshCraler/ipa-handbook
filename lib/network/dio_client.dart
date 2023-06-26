@@ -49,14 +49,14 @@ class DioClient {
     }
   }
 
-  Future<Response> postRequest(
+  Future<Response<T>> postRequest<T>(
     String url, {
     Map<String, dynamic>? parameters,
     required Map<String, dynamic> data,
   }) async {
     try {
       var formData = FormData.fromMap(data);
-      return await dio.post(
+      return await dio.post<T>(
         url,
         queryParameters: parameters,
         data: formData,
