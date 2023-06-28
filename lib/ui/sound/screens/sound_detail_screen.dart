@@ -275,7 +275,7 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
             InfiniteSpacing.small,
             InfiniteDivider.horizontal,
             InfiniteSpacing.small,
-            Text(context.localizations.position_example_subtitle(data.name!)),
+            Text(context.localizations.practice_example_subtitle),
             InfiniteSpacing.small,
             Text(context.localizations.in_sentence_listen_advice(data.name!)),
             InfiniteSpacing.small,
