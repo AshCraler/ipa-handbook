@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../sizes/sizes.dart';
 
 class InfiniteSpacing {
+  const InfiniteSpacing._();
+
   /// size 4
   static SizedBox get xxSmall => SizedBox.square(
         dimension: InfiniteSize.spacingXXS * InfiniteSize.sizeScale,
@@ -38,6 +40,7 @@ class InfiniteSpacing {
 }
 
 class InfiniteDivider {
+  const InfiniteDivider._();
   static Divider get horizontal => const Divider(
         height: 1,
       );
@@ -68,6 +71,7 @@ class InfiniteDivider {
 }
 
 class InfinitePadding {
+  const InfinitePadding._();
   static EdgeInsets get all => EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale);
 
   static EdgeInsets get horizontal =>
@@ -147,21 +151,24 @@ class InfinitePadding {
 }
 
 class InfiniteShape {
-  static get cardShape =>
+  const InfiniteShape._();
+  static RoundedRectangleBorder get cardShape =>
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(InfiniteSize.cardRadius));
 
-  static get bottomSheetShape => RoundedRectangleBorder(
+  static RoundedRectangleBorder get bottomSheetShape => RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(InfiniteSize.dialogRadius)),
       );
 
-  static get zeroBorderShape => RoundedRectangleBorder(borderRadius: BorderRadius.circular(0));
+  static RoundedRectangleBorder get zeroBorderShape =>
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(0));
 }
 
 class InfiniteShadow {
-  static get boxShadowTop =>
+  const InfiniteShadow._();
+  static List<BoxShadow> get boxShadowTop =>
       [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 2, offset: const Offset(0, -1))];
 
-  static get boxShadow => [
+  static List<BoxShadow> get boxShadow => [
         BoxShadow(
           color: Colors.black.withOpacity(0.1),
           blurRadius: 4,

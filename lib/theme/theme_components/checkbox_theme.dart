@@ -1,10 +1,12 @@
 part of 'theme_component.dart';
 
-CheckboxThemeData haloCheckboxTheme(ColorScheme colorScheme) => CheckboxThemeData(
+CheckboxThemeData haloCheckboxTheme(ColorScheme colorScheme) =>
+    CheckboxThemeData(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(InfiniteSize.checkboxRadius),
       ),
-      fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+      fillColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) {
           return colorScheme.disableColor;
         }
@@ -13,7 +15,8 @@ CheckboxThemeData haloCheckboxTheme(ColorScheme colorScheme) => CheckboxThemeDat
         }
         return Colors.transparent;
       }),
-      checkColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+      checkColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) {
           return colorScheme.disableTextColor;
         }

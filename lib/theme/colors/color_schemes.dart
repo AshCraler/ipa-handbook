@@ -108,15 +108,20 @@ extension ColorBuildContextExtension on BuildContext {
 
   Color get darkRed => Color.alphaBlend(red.withOpacity(0.85), onBackground);
 
-  Color get surfaceGray => Color.alphaBlend(surfaceColor.withOpacity(0.5), backgroundColor);
+  Color get surfaceGray =>
+      Color.alphaBlend(surfaceColor.withOpacity(0.5), backgroundColor);
 
-  Color get surfaceGray2 => Color.alphaBlend(surfaceColor.withOpacity(0.1), backgroundColor);
+  Color get surfaceGray2 =>
+      Color.alphaBlend(surfaceColor.withOpacity(0.1), backgroundColor);
 
-  Color get surface1 => Color.alphaBlend(primaryColor.withOpacity(0.05), surfaceColor);
+  Color get surface1 =>
+      Color.alphaBlend(primaryColor.withOpacity(0.05), surfaceColor);
 
-  Color get surface2 => Color.alphaBlend(primaryColor.withOpacity(0.08), surfaceColor);
+  Color get surface2 =>
+      Color.alphaBlend(primaryColor.withOpacity(0.08), surfaceColor);
 
-  Color get surface3 => Color.alphaBlend(primaryColor.withOpacity(0.11), surfaceColor);
+  Color get surface3 =>
+      Color.alphaBlend(primaryColor.withOpacity(0.11), surfaceColor);
 
   Color get primarySurface => primaryColor.withOpacity(.2);
 

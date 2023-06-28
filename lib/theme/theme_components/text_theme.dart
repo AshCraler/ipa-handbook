@@ -86,12 +86,6 @@ extension FontStyleExtension on TextStyle {
 
   TextStyle get underline => copyWith(decoration: TextDecoration.underline);
 
-  TextStyle get priceSmall => copyWith(fontSize: InfiniteFontSize.priceSmall);
-
-  TextStyle get priceMedium => copyWith(fontSize: InfiniteFontSize.priceMedium);
-
-  TextStyle get priceLarge => copyWith(fontSize: InfiniteFontSize.priceLarge);
-
   /// set color for Text
   TextStyle get notice =>
       copyWith(color: context?.colorScheme.error ?? InfiniteColorScheme.lightColorScheme.error);
@@ -143,4 +137,89 @@ extension FontStyleExtension on TextStyle {
   // TextStyle get onBlue => copyWith(color: context?.customColors.onBlue);
   // TextStyle get onBlueContainer => copyWith(color: context?.customColors.onBlueContainer);
   // TextStyle get inversePrimary => copyWith(color: context?.colorScheme.inversePrimary);
+}
+
+extension TextBuildContextExtension on BuildContext {
+  TextTheme get textTheme => Theme.of(this).textTheme;
+  ColorScheme get _colorScheme => Theme.of(this).colorScheme;
+
+  TextStyle? get displayLarge => textTheme.displayLarge;
+
+  TextStyle? get displayMedium => textTheme.displayMedium;
+
+  TextStyle? get displaySmall => textTheme.displaySmall;
+
+  TextStyle? get headlineLarge => textTheme.headlineLarge;
+
+  TextStyle? get headlineMedium => textTheme.headlineMedium;
+
+  TextStyle? get headlineSmall => textTheme.headlineSmall;
+
+  TextStyle? get titleLarge => textTheme.titleLarge;
+
+  TextStyle? get titleMedium => textTheme.titleMedium;
+
+  ///Fontsize 14
+  TextStyle? get titleSmall => textTheme.titleSmall;
+
+  ///Fontsize 16
+  TextStyle? get bodyLarge => textTheme.bodyLarge;
+
+  ///Fonsize 15
+  TextStyle? get bodyMedium => textTheme.bodyMedium;
+
+  ///Fontsize 13
+  TextStyle? get bodySmall => textTheme.bodySmall;
+
+  TextStyle? get labelLarge => textTheme.labelLarge;
+
+  TextStyle? get labelMedium => textTheme.labelMedium;
+
+  TextStyle? get labelSmall => textTheme.labelSmall;
+
+  TextStyle? get buttonText => textTheme.labelLarge;
+
+  TextStyle? get chip => textTheme.labelLarge;
+
+  TextStyle? get fab => textTheme.labelLarge;
+
+  TextStyle? get cardHeader => textTheme.titleMedium;
+
+  TextStyle? get cardSubhead => textTheme.bodyMedium;
+
+  TextStyle? get cardTitle => textTheme.bodyLarge?.copyWith(color: _colorScheme.onSurface);
+
+  TextStyle? get cardSubTitle => textTheme.bodyMedium;
+
+  TextStyle? get cardContent => textTheme.bodyMedium;
+
+  TextStyle? get listTile => cardTitle;
+
+  TextStyle? get listSubTitle => cardSubTitle;
+
+  TextStyle? get inputField => textTheme.bodyLarge;
+
+  TextStyle? get inputFieldLabel => textTheme.bodySmall?.copyWith(color: _colorScheme.onSurface);
+
+  TextStyle? get appBarTitle => textTheme.titleLarge;
+
+  TextStyle? get appBarSubtitle => textTheme.bodyLarge;
+
+  TextStyle? get navigationBar => textTheme.labelMedium;
+
+  TextStyle? get drawerMenu => textTheme.labelLarge?.bold;
+
+  TextStyle? get menuItem => textTheme.bodyLarge;
+
+  TextStyle? get dialogTitle => textTheme.titleLarge;
+
+  TextStyle? get dialogSubTitle => textTheme.titleMedium;
+
+  TextStyle? get dialogMessage => textTheme.bodyMedium;
+
+  TextStyle? get dialogItem => textTheme.bodyLarge;
+
+  TextStyle? get dialogAction => textTheme.labelLarge;
+
+  TextStyle? get primaryText => textTheme.bodyMedium?.setColor(_colorScheme.primary);
 }

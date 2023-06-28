@@ -8,7 +8,8 @@ ChipThemeData haloChipTheme(ColorScheme colorScheme) => ChipThemeData(
           ?.copyWith(color: colorScheme.onSecondaryContainer),
       labelPadding: EdgeInsets.symmetric(horizontal: InfiniteSize.chipPadding),
       padding: EdgeInsets.symmetric(
-          horizontal: InfiniteSize.chipPadding, vertical: InfiniteSize.chipPadding),
+          horizontal: InfiniteSize.chipPadding,
+          vertical: InfiniteSize.chipPadding),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(InfiniteSize.chipRadius),
       ),

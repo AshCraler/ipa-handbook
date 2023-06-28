@@ -23,7 +23,8 @@ BottomAppBarTheme bottomAppBarTheme(ColorScheme colorScheme, bool isDark) =>
           color: colorScheme.surface,
         );
 
-BottomNavigationBarThemeData infiniteBottomNavigationBarTheme(ColorScheme colorScheme) =>
+BottomNavigationBarThemeData infiniteBottomNavigationBarTheme(
+        ColorScheme colorScheme) =>
     BottomNavigationBarThemeData(
       elevation: 0.5,
       backgroundColor: colorScheme.surface,
@@ -32,7 +33,8 @@ BottomNavigationBarThemeData infiniteBottomNavigationBarTheme(ColorScheme colorS
     );
 
 SystemUiOverlayStyle getSystemOverlay(bool isDark) {
-  return (isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark).copyWith(
+  return (isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark)
+      .copyWith(
     statusBarColor: Colors.transparent,
   );
 }

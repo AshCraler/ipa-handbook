@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:ipa_handbook/config/di/dependency_injection.dart';
 import 'providers/local_provider.dart';
 import 'theme/themes_data.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'config/router/app_router.dart';
 
 void main() {
+  configureDependencyInjection();
   runApp(const MyApp());
 }
 

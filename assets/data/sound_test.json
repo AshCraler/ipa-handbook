@@ -1,0 +1,182 @@
+[
+    {
+        "crawl_key": "b",
+        "name": "b",
+        "example": "buy | verb | about",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "d",
+        "name": "d",
+        "example": "doubt | add | mind",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "dʒ",
+        "name": "dʒ",
+        "example": "jail | challenge | wager",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "ʒ",
+        "name": "ʒ",
+        "example": "usually | measure | massage",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "f",
+        "name": "f",
+        "example": "fine | safe | painful",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "g",
+        "name": "g",
+        "example": "go | dialogue | flag",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "h",
+        "name": "h",
+        "example": "have | Manhattan | hopeful",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "k",
+        "name": "k",
+        "example": "kind | occupy | back",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "l",
+        "name": "l",
+        "example": "like | fall | please",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "m",
+        "name": "m",
+        "example": "maybe | form | impossible",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "n",
+        "name": "n",
+        "example": "can’t | woman | know",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "n-2",
+        "name": "ŋ",
+        "example": "bring | finger | drank",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "p",
+        "name": "p",
+        "example": "power | trap | apartment",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "r",
+        "name": "r",
+        "example": "real | store | third",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "s",
+        "name": "s",
+        "example": "same | mice | except",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "ʃ",
+        "name": "ʃ",
+        "example": "shop | issue | motion",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "t",
+        "name": "t",
+        "example": "too | attract | skirt",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "tʃ",
+        "name": "t∫",
+        "example": "choose | watch | change",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "θ",
+        "name": "θ",
+        "example": "thanks | bath | nothing",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "d-2",
+        "name": "ð",
+        "example": "the | either | breathe",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "v",
+        "name": "v",
+        "example": "very | leave | favorite",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "w",
+        "name": "w",
+        "example": "Weissman | switch | awhile",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "y",
+        "name": "y",
+        "example": "yesterday | yield | use",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "z",
+        "name": "z",
+        "example": "close | Zicklin | exactly",
+        "type": "consonant"
+    },
+    {
+        "crawl_key": "kw",
+        "name": "kw",
+        "example": "question | acquire | quiz",
+        "type": "cluster"
+    },
+    {
+        "crawl_key": "st",
+        "name": "st",
+        "example": "stocks | stare | straight",
+        "type": "cluster"
+    },
+    {
+        "crawl_key": "sk",
+        "name": "sk",
+        "example": "skip | exclusive | score",
+        "type": "cluster"
+    },
+    {
+        "crawl_key": "ks",
+        "name": "ks",
+        "example": "expensive | exercise | axis",
+        "type": "cluster"
+    },
+    {
+        "crawl_key": "sp",
+        "name": "sp",
+        "example": "spray | splice | spot",
+        "type": "cluster"
+    },
+    {
+        "crawl_key": "sl",
+        "name": "sl",
+        "example": "slide | slim | slope",
+        "type": "cluster"
+    }
+]

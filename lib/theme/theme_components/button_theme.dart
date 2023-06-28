@@ -23,12 +23,14 @@ MaterialStateProperty<RoundedRectangleBorder?> get buttonShape =>
 
 ButtonStyle getTextButtonStyle(ColorScheme colorScheme,
         {Color? foregroundColor,
-        EdgeInsetsGeometry padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+        EdgeInsetsGeometry padding =
+            const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
         Size? minimumSize}) =>
     _getInfiniteButtonStyle(colorScheme).copyWith(
       padding: MaterialStateProperty.all(padding),
       minimumSize: MaterialStateProperty.all(minimumSize),
-      foregroundColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+      foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) {
           return colorScheme.disableTextColor;
         }
@@ -36,35 +38,42 @@ ButtonStyle getTextButtonStyle(ColorScheme colorScheme,
       }),
     );
 
-ButtonStyle getElevatedButtonStyle(ColorScheme colorScheme, Color backgroundColor) =>
+ButtonStyle getElevatedButtonStyle(
+        ColorScheme colorScheme, Color backgroundColor) =>
     _getInfiniteButtonStyle(colorScheme).copyWith(
         padding: buttonPadding,
         shape: buttonShape,
-        backgroundColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+        backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
             return colorScheme.disableColor;
           } else if (states.contains(MaterialState.pressed)) {
-            return Color.alphaBlend(colorScheme.onPrimary.withOpacity(0.12), backgroundColor);
+            return Color.alphaBlend(
+                colorScheme.onPrimary.withOpacity(0.12), backgroundColor);
           }
           return backgroundColor;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+        foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
             return colorScheme.disableTextColor;
           }
           return colorScheme.onPrimary;
         }),
-        overlayColor: MaterialStateProperty.all(backgroundColor.withOpacity(0.06)));
+        overlayColor:
+            MaterialStateProperty.all(backgroundColor.withOpacity(0.06)));
 
 ButtonStyle getOutlinedButtonStyle(ColorScheme colorScheme, Color color) =>
     _getInfiniteButtonStyle(colorScheme).copyWith(
         padding: buttonPadding,
         shape: buttonShape,
-        side: MaterialStateProperty.resolveWith<BorderSide?>((Set<MaterialState> states) {
+        side: MaterialStateProperty.resolveWith<BorderSide?>(
+            (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) return null;
           return BorderSide(color: color);
         }),
-        foregroundColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+        foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
             return colorScheme.disableTextColor;
           }
@@ -72,7 +81,8 @@ ButtonStyle getOutlinedButtonStyle(ColorScheme colorScheme, Color color) =>
         }),
         overlayColor: MaterialStateProperty.all(color.withOpacity(0.06)));
 
-TextButtonThemeData infiniTextButtonTheme(ColorScheme colorScheme) => TextButtonThemeData(
+TextButtonThemeData infiniTextButtonTheme(ColorScheme colorScheme) =>
+    TextButtonThemeData(
       style: _getInfiniteButtonStyle(colorScheme),
     );
 
@@ -82,27 +92,33 @@ OutlinedButtonThemeData infiniteOutlinedButtonTheme(ColorScheme colorScheme) =>
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       padding: buttonPadding,
       shape: buttonShape,
-      side: MaterialStateProperty.resolveWith<BorderSide?>((Set<MaterialState> states) {
+      side: MaterialStateProperty.resolveWith<BorderSide?>(
+          (Set<MaterialState> states) {
         if (states.contains(MaterialState.disabled)) return null;
         return BorderSide(color: colorScheme.outline);
       }),
-      minimumSize: MaterialStateProperty.all(Size.fromHeight(InfiniteSize.buttonHeight)),
-      maximumSize: MaterialStateProperty.all(Size.fromHeight(2 * InfiniteSize.buttonHeight)),
+      minimumSize:
+          MaterialStateProperty.all(Size.fromHeight(InfiniteSize.buttonHeight)),
+      maximumSize: MaterialStateProperty.all(
+          Size.fromHeight(2 * InfiniteSize.buttonHeight)),
     ));
 
 ElevatedButtonThemeData infiniteElevatedButtonTheme(ColorScheme colorScheme) =>
     ElevatedButtonThemeData(
       style: _getInfiniteButtonStyle(colorScheme).copyWith(
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        backgroundColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+        backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
             return colorScheme.disableColor;
           } else if (states.contains(MaterialState.pressed)) {
-            return Color.alphaBlend(colorScheme.onPrimary.withOpacity(0.12), colorScheme.primary);
+            return Color.alphaBlend(
+                colorScheme.onPrimary.withOpacity(0.12), colorScheme.primary);
           }
           return colorScheme.primary;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+        foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
             return colorScheme.disableTextColor;
           }
@@ -110,8 +126,10 @@ ElevatedButtonThemeData infiniteElevatedButtonTheme(ColorScheme colorScheme) =>
         }),
         padding: buttonPadding,
         shape: buttonShape,
-        maximumSize: MaterialStateProperty.all(Size.fromHeight(2 * InfiniteSize.buttonHeight)),
-        minimumSize: MaterialStateProperty.all(Size.fromHeight(InfiniteSize.buttonHeight)),
+        maximumSize: MaterialStateProperty.all(
+            Size.fromHeight(2 * InfiniteSize.buttonHeight)),
+        minimumSize: MaterialStateProperty.all(
+            Size.fromHeight(InfiniteSize.buttonHeight)),
       ),
     );
 
@@ -129,7 +147,8 @@ infiniteCardTheme(ColorScheme colorScheme) => CardTheme(
     );
 
 infiniteSwitchTheme(ColorScheme colorScheme) => SwitchThemeData(
-      trackColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+      trackColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
         if (states.contains(MaterialState.selected)) return colorScheme.primary;
         return colorScheme.disableTextColor;
       }),
@@ -137,7 +156,8 @@ infiniteSwitchTheme(ColorScheme colorScheme) => SwitchThemeData(
     );
 
 infiniteRadioTheme(ColorScheme colorScheme) => RadioThemeData(
-      fillColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+      fillColor: MaterialStateProperty.resolveWith<Color?>(
+          (Set<MaterialState> states) {
         if (states.contains(MaterialState.selected)) return colorScheme.primary;
         return colorScheme.outline;
       }),

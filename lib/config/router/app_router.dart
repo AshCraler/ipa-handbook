@@ -1,10 +1,11 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ipa_handbook/ui/sound/screens/sound_detail_screen.dart';
 
 import '../../config/router/screen_name.dart';
-import '../../screens/home/home_screen.dart';
-import '../../screens/settings/setting_screen.dart';
+import '../../ui/home/screens/home_screen.dart';
+import '../../ui/settings/setting_screen.dart';
 import '../../widgets/error_widgets/error_page.dart';
 
 ///Class to initialize static router of app
@@ -34,6 +35,14 @@ class AppRouter {
         path: BaseScreen.settings.routePath,
         name: BaseScreen.settings.name,
         builder: (context, state) => const SettingScreen(),
+      ),
+
+      GoRoute(
+        path: BaseScreen.soundDetail.routePath,
+        name: BaseScreen.soundDetail.name,
+        builder: (context, state) => SoundDetailScreen(
+          sound: state.queryParameters['sound']!,
+        ),
       ),
 
       ///Home route

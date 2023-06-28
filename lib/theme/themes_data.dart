@@ -6,9 +6,11 @@ import 'theme_components/theme_component.dart';
 class InfiniteTheme {
   const InfiniteTheme._();
 
-  static ThemeData get lightTheme => getTheme(InfiniteColorScheme.lightColorScheme, false);
+  static ThemeData get lightTheme =>
+      getTheme(InfiniteColorScheme.lightColorScheme, false);
 
-  static ThemeData get darkTheme => getTheme(InfiniteColorScheme.darkColorScheme, true);
+  static ThemeData get darkTheme =>
+      getTheme(InfiniteColorScheme.darkColorScheme, true);
 
   static ThemeData getTheme(ColorScheme colorScheme, bool isDark) {
     return ThemeData(

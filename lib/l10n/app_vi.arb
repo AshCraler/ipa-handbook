@@ -1,4 +1,26 @@
 {
-    "helloWorld": "Xin chào thế giới",
-    "setting": "Cài đặt"
+    "helloWorld": "Xin chào thế giới!",
+    "setting": "Cài đặt",
+    "pronounce_instruction": "Để tạo âm /{sound}/: \n",
+
+
+    "in_words": "Trong từ vựng",
+    "in_word_subtitle": "Âm /{sound}/ đóng vai trò quan trọng trong sự khác biệt giữa các từ ghép dưới đây.",
+    "pair_title": "Nghe từng cặp từ, chú ý vào cách từ đầu tiên khác với từ thứ hai.",
+    "in_word_long_record_advice": "Ghi âm lại bản thân đang lặp lại các từ, chắc chắn tập trung vào cách phát âm của âm /{sound}/. Sau đó, so sánh với bản ghi mẫu. Nếu bạn cần giúp đỡ, xem video hoạt hình để thấy cách phát âm chính xác âm /{sound}/.",
+    "in_word_short_record_advice": "Ghi âm lại bản thân đang lặp lại các từ, chắc chắn tập trung vào cách phát âm của âm /{sound}/. Sau đó, so sánh với bản ghi mẫu.",
+    "in_word_long_repeat_advice": "Lặp lại bài tập này mỗi ngày nhiều lần. Như bất kỳ kỹ năng nào khác, việc cải thiện đòi hỏi sự lặp đi lặp lại và thực hành.",
+    "in_word_short_repeat_advice": "Lặp lại bài tập này mỗi ngày nhiều lần.",
+    "position_example_subtitle": "Dưới đây là một số từ thông dụng bao gồm âm /{sound}/. Nên làm quen với cách phát âm của chúng.",
+    "in_word_listen_advice": "Nghe cách phát âm của từng từ, tập trung vào âm /{sound}/. Chú ý rằng âm /{sound}/ có thể xuất hiện ở đầu, giữa hoặc cuối của một từ.",
+
+    "in_sentences": "Trong câu",
+    "in_sentence_subtitle": "Việc này quan trọng hơn là việc chỉ tập trung vào các từ đơn khi bạn luyện tập âm trong tiếng Anh. Các câu vận động lưỡi (các câu khó phát âm) là một cách tuyệt vời để rèn luyện lưỡi để phát âm /{sound}/ trong một câu lưu loát.",
+    "sentence_title": "Nghe cách phát âm mỗi câu vận động lưỡi. Hãy chú ý các âm hoặc từ có thể khó khăn đối với bạn và số lần bạn sẽ phát âm /{sound}/.",
+    "in_sentence_long_record_advice": "Ghi âm lại khi lặp lại câu vận động lưỡi. Hãy thử từ từ ban đầu, sau đó dần dần tăng tốc độ cho đến khi phát âm tự nhiên và lưu loát.",
+    "in_sentence_short_record_advice": "Ghi âm lại khi lặp lại từng câu, tập trung vào cách phát âm âm /{sound}/.",
+    "in_sentence_long_repeat_advice": "Lặp lại bài tập này mỗi ngày một số lần. Bạn cũng có thể thử tạo các câu vận động lưỡi của riêng bạn!",
+    "in_sentence_short_repeat_advice": "Lặp lại bài tập này mỗi ngày một số lần.",
+    "practice_example_subtitle": "Luyện tập phát âm hiệu quả hơn trong ngữ cảnh ý nghĩa. Dưới đây là một số câu với âm /k/ mà bạn có thể thường xuyên sử dụng.",
+    "in_sentence_listen_advice": "Nghe cách phát âm mỗi câu. Có từ nào chứa âm /{sound}/ không?"
 }
