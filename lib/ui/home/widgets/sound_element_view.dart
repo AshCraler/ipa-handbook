@@ -20,8 +20,7 @@ class PreviewElement extends StatelessWidget {
         queryParameters: {"sound": soundPreview.name},
       ),
       child: Container(
-        margin: InfinitePadding.all,
-        padding: InfinitePadding.all,
+        padding: EdgeInsets.all(InfiniteSize.paddingXS),
         decoration: BoxDecoration(
           border: Border.all(color: context.outlineColor),
           borderRadius: BorderRadius.circular(InfiniteSize.cardRadius),

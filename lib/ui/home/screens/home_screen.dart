@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ipa_handbook/config/constants/assets.dart';
 import 'package:ipa_handbook/config/di/dependency_injection.dart';
+import 'package:ipa_handbook/theme/infinite_theme.dart';
 
 import '../../../config/router/screen_name.dart';
 import '../../../models/sound_preview.dart';
@@ -47,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text('Something went wrong'),
               );
             }
+
             if (!snapshot.hasData) {
               return const Center(
                 child: CircularProgressIndicator(),
@@ -56,14 +58,49 @@ class _HomeScreenState extends State<HomeScreen> {
             final List list = jsonDecode(snapshot.data!) as List;
             final List<SoundPreview> sounds =
                 list.map((e) => SoundPreview.fromJson(jsonEncode(e))).toList();
-            return GridView.builder(
-                itemCount: sounds.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                itemBuilder: (context, index) {
-                  return PreviewElement(
-                    soundPreview: sounds[index],
-                  );
-                });
+            final Map<String, List<SoundPreview>> soundsMap = {};
+            for (final SoundPreview sound in sounds) {
+              if (soundsMap.containsKey(sound.type)) {
+                soundsMap[sound.type]!.add(sound);
+              } else {
+                soundsMap[sound.type!] = [sound];
+              }
+            }
+
+            return ListView.builder(
+              padding: InfinitePadding.all,
+              itemCount: soundsMap.length,
+              itemBuilder: (context, index) {
+                final String key = soundsMap.keys.elementAt(index);
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      key.capitalize(),
+                      style: context.headlineMedium?.bold,
+                    ),
+                    InfiniteSpacing.normal,
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: soundsMap[key]!.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 1.5,
+                        crossAxisSpacing: InfiniteSize.spacingXS,
+                        mainAxisSpacing: InfiniteSize.spacingXS,
+                      ),
+                      itemBuilder: (context, index) {
+                        return PreviewElement(
+                          soundPreview: soundsMap[key]![index],
+                        );
+                      },
+                    ),
+                    InfiniteSpacing.normal,
+                  ],
+                );
+              },
+            );
           }),
     );
   }
