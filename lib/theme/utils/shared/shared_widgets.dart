@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../sizes/sizes.dart';
 
 class InfiniteSpacing {
+  const InfiniteSpacing._();
+
   /// size 4
   static SizedBox get xxSmall => SizedBox.square(
         dimension: InfiniteSize.spacingXXS * InfiniteSize.sizeScale,
@@ -33,11 +35,12 @@ class InfiniteSpacing {
       );
 
   /// size 32
-  static SizedBox get xxLarge => SizedBox.square(
-      dimension: InfiniteSize.spacingXXL * InfiniteSize.sizeScale);
+  static SizedBox get xxLarge =>
+      SizedBox.square(dimension: InfiniteSize.spacingXXL * InfiniteSize.sizeScale);
 }
 
 class InfiniteDivider {
+  const InfiniteDivider._();
   static Divider get horizontal => const Divider(
         height: 1,
       );
@@ -68,17 +71,16 @@ class InfiniteDivider {
 }
 
 class InfinitePadding {
-  static EdgeInsets get all =>
-      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale);
+  const InfinitePadding._();
+  static EdgeInsets get all => EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale);
 
-  static EdgeInsets get horizontal => EdgeInsets.symmetric(
-      horizontal: InfiniteSize.padding * InfiniteSize.sizeScale);
+  static EdgeInsets get horizontal =>
+      EdgeInsets.symmetric(horizontal: InfiniteSize.padding * InfiniteSize.sizeScale);
 
-  static EdgeInsets get vertical => EdgeInsets.symmetric(
-      vertical: InfiniteSize.padding * InfiniteSize.sizeScale);
+  static EdgeInsets get vertical =>
+      EdgeInsets.symmetric(vertical: InfiniteSize.padding * InfiniteSize.sizeScale);
 
-  static EdgeInsets get top =>
-      EdgeInsets.only(top: InfiniteSize.padding * InfiniteSize.sizeScale);
+  static EdgeInsets get top => EdgeInsets.only(top: InfiniteSize.padding * InfiniteSize.sizeScale);
 
   static EdgeInsets get bottom =>
       EdgeInsets.only(bottom: InfiniteSize.padding * InfiniteSize.sizeScale);
@@ -90,23 +92,18 @@ class InfinitePadding {
       EdgeInsets.only(right: InfiniteSize.padding * InfiniteSize.sizeScale);
 
   static EdgeInsets get noTop =>
-      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale)
-          .copyWith(top: 0);
+      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale).copyWith(top: 0);
 
   static EdgeInsets get noBottom =>
-      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale)
-          .copyWith(bottom: 0);
+      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale).copyWith(bottom: 0);
 
   static EdgeInsets get noLeft =>
-      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale)
-          .copyWith(left: 0);
+      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale).copyWith(left: 0);
 
   static EdgeInsets get noRight =>
-      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale)
-          .copyWith(right: 0);
+      EdgeInsets.all(InfiniteSize.padding * InfiniteSize.sizeScale).copyWith(right: 0);
 
-  static EdgeInsets paddingAll(double size) =>
-      EdgeInsets.all(size * InfiniteSize.sizeScale);
+  static EdgeInsets paddingAll(double size) => EdgeInsets.all(size * InfiniteSize.sizeScale);
 
   static EdgeInsets paddingHorizontal(double size) =>
       EdgeInsets.symmetric(horizontal: size * InfiniteSize.sizeScale);
@@ -114,13 +111,10 @@ class InfinitePadding {
   static EdgeInsets paddingVertical(double size) =>
       EdgeInsets.symmetric(vertical: size * InfiniteSize.sizeScale);
 
-  static EdgeInsets paddingSymmetric(double h, double v) =>
-      EdgeInsets.symmetric(
-          horizontal: h * InfiniteSize.sizeScale,
-          vertical: v * InfiniteSize.sizeScale);
+  static EdgeInsets paddingSymmetric(double h, double v) => EdgeInsets.symmetric(
+      horizontal: h * InfiniteSize.sizeScale, vertical: v * InfiniteSize.sizeScale);
 
-  static EdgeInsets paddingTop(double size) =>
-      EdgeInsets.only(top: size * InfiniteSize.sizeScale);
+  static EdgeInsets paddingTop(double size) => EdgeInsets.only(top: size * InfiniteSize.sizeScale);
 
   static EdgeInsets paddingBottom(double size) =>
       EdgeInsets.only(bottom: size * InfiniteSize.sizeScale);
@@ -157,27 +151,24 @@ class InfinitePadding {
 }
 
 class InfiniteShape {
-  static get cardShape => RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(InfiniteSize.cardRadius));
+  const InfiniteShape._();
+  static RoundedRectangleBorder get cardShape =>
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(InfiniteSize.cardRadius));
 
-  static get bottomSheetShape => RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-            top: Radius.circular(InfiniteSize.dialogRadius)),
+  static RoundedRectangleBorder get bottomSheetShape => RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(InfiniteSize.dialogRadius)),
       );
 
-  static get zeroBorderShape =>
+  static RoundedRectangleBorder get zeroBorderShape =>
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(0));
 }
 
 class InfiniteShadow {
-  static get boxShadowTop => [
-        BoxShadow(
-            color: Colors.black.withOpacity(0.1),
-            blurRadius: 2,
-            offset: const Offset(0, -1))
-      ];
+  const InfiniteShadow._();
+  static List<BoxShadow> get boxShadowTop =>
+      [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 2, offset: const Offset(0, -1))];
 
-  static get boxShadow => [
+  static List<BoxShadow> get boxShadow => [
         BoxShadow(
           color: Colors.black.withOpacity(0.1),
           blurRadius: 4,
