@@ -21,12 +21,9 @@ class _AudioViewState extends State<AudioView> with SingleTickerProviderStateMix
   bool _isPlaying = false;
   Duration _position = Duration.zero;
 
-  late final Source source;
-
   @override
   void initState() {
     super.initState();
-    source = UrlSource(widget.sourceUrl);
     widget.audioPlayer.onPositionChanged.listen((Duration p) {
       setState(() {
         _position = p;
@@ -85,7 +82,7 @@ class _AudioViewState extends State<AudioView> with SingleTickerProviderStateMix
       if (!_isPlaying) {
         _isPlaying = true;
         try {
-          widget.audioPlayer.play(source, position: _position);
+          widget.audioPlayer.play(widget.audioPlayer.source!, position: _position);
         } catch (e) {
           print(e);
         }

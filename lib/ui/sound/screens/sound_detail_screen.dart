@@ -32,7 +32,14 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
 
     final result = SoundDetail.fromJson(response);
     for (final ex in result.simpleExamples!) {
-      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+      final _ap = AudioPlayer();
+      try {
+        final _ = await _ap.setSourceUrl('${DioClient.baseUrlTest}data/${ex.audio!}');
+      } catch (error) {
+        print('error at: ${widget.sound} => ${ex.text} => ${ex.audio!}');
+        continue;
+      }
+      _audioPlayers.putIfAbsent(ex, () => _ap);
     }
 
     for (final ex in result.compareExamples!) {
@@ -163,11 +170,13 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
               spacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.simpleExamples!)
-                  AudioView(
-                    audioPlayer: _audioPlayers[ex]!,
-                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
-                    text: ex.text!,
-                  ),
+                  _audioPlayers[ex] != null
+                      ? AudioView(
+                          audioPlayer: _audioPlayers[ex]!,
+                          sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
+                          text: ex.text!,
+                        )
+                      : const SizedBox.shrink(),
               ],
             ),
           ),
