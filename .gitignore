@@ -49,5 +49,5 @@ app.*.map.json
 .vscode/*
 
 # Environment
-.env
+# .env
 *.g.dart
