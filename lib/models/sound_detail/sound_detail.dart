@@ -50,11 +50,15 @@ class SoundDetail {
         compareExamples: (data['compareExamples'] as List<dynamic>?)
             ?.map((e) => Example.fromMap(e as Map<String, dynamic>))
             .toList(),
-        positionExamples: data['positionExamples'] as List<Example>?,
+        positionExamples: (data['positionExamples'] as List<dynamic>?)
+            ?.map((e) => Example.fromMap(e as Map<String, dynamic>))
+            .toList(),
         sentenceExamples: (data['sentenceExamples'] as List<dynamic>?)
             ?.map((e) => Example.fromMap(e as Map<String, dynamic>))
             .toList(),
-        practiceExamples: data['practiceExamples'] as List<Example>?,
+        practiceExamples: (data['practiceExamples'] as List<dynamic>?)
+            ?.map((e) => Example.fromMap(e as Map<String, dynamic>))
+            .toList(),
       );
 
   Map<String, dynamic> toMap() => {
