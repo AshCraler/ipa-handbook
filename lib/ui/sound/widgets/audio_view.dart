@@ -17,13 +17,16 @@ class AudioView extends StatefulWidget {
   State<AudioView> createState() => _AudioViewState();
 }
 
-class _AudioViewState extends State<AudioView> {
+class _AudioViewState extends State<AudioView> with SingleTickerProviderStateMixin {
   bool _isPlaying = false;
   Duration _position = Duration.zero;
+
+  late final Source source;
 
   @override
   void initState() {
     super.initState();
+    source = UrlSource(widget.sourceUrl);
     widget.audioPlayer.onPositionChanged.listen((Duration p) {
       setState(() {
         _position = p;
@@ -40,40 +43,49 @@ class _AudioViewState extends State<AudioView> {
 
   @override
   Widget build(BuildContext context) {
-    final Source source = UrlSource(widget.sourceUrl);
-
-    return Container(
-      padding: EdgeInsets.all(InfiniteSize.paddingXXS),
-      decoration: BoxDecoration(
-        color: context.colorScheme.tertiary,
-        borderRadius: BorderRadius.circular(InfiniteSize.chipRadius),
-      ),
-      child: Row(
-        children: [
-          IconButton(
-            icon: _isPlaying ? const Icon(Icons.pause) : const Icon(Icons.play_arrow),
-            onPressed: () {
-              setState(() {
-                if (!_isPlaying) {
-                  _isPlaying = true;
-                  try {
-                    widget.audioPlayer.play(source, position: _position);
-                  } catch (e) {
-                    print(e);
-                  }
-                } else {
-                  _isPlaying = false;
-                  widget.audioPlayer.pause();
-                }
-              });
-            },
-          ),
-          Text(
-            widget.text,
-            style: context.bodyMedium?.bold,
-          ),
-        ],
+    return GestureDetector(
+      onTap: _playAudio,
+      child: Container(
+        padding: EdgeInsets.symmetric(
+            horizontal: InfiniteSize.paddingXXS, vertical: InfiniteSize.paddingXS),
+        decoration: BoxDecoration(
+          color: context.colorScheme.tertiary.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(InfiniteSize.buttonRadius),
+        ),
+        child: Row(
+          children: [
+            _isPlaying
+                ? Icon(
+                    Icons.pause,
+                    size: InfiniteSize.iconHeight,
+                  )
+                : Icon(
+                    Icons.play_arrow,
+                    size: InfiniteSize.iconHeight,
+                  ),
+            Text(
+              widget.text,
+              style: context.bodyMedium?.bold,
+            ),
+          ],
+        ),
       ),
     );
+  }
+
+  void _playAudio() {
+    setState(() {
+      if (!_isPlaying) {
+        _isPlaying = true;
+        try {
+          widget.audioPlayer.play(source, position: _position);
+        } catch (e) {
+          print(e);
+        }
+      } else {
+        _isPlaying = false;
+        widget.audioPlayer.pause();
+      }
+    });
   }
 }

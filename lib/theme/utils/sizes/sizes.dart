@@ -45,6 +45,7 @@ class InfiniteSize {
   static double get textFieldPadding => 14;
   static double get cardRadius => 16;
   static double get dialogRadius => 20;
+  static double get iconHeight => 36;
 
   static double get checkboxRadius => 2;
   static double get outlineWidth => 1;
