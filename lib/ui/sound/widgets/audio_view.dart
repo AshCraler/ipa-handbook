@@ -47,27 +47,34 @@ class _AudioViewState extends State<AudioView> with SingleTickerProviderStateMix
       onTap: _playAudio,
       child: Container(
         padding: EdgeInsets.symmetric(
-            horizontal: InfiniteSize.paddingXXS, vertical: InfiniteSize.paddingXS),
+            horizontal: InfiniteSize.paddingXS, vertical: InfiniteSize.paddingXXS),
         decoration: BoxDecoration(
           color: context.colorScheme.tertiary.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(InfiniteSize.buttonRadius),
+          borderRadius: BorderRadius.circular(InfiniteSize.chipRadius),
         ),
-        child: Row(
-          children: [
-            _isPlaying
-                ? Icon(
-                    Icons.pause,
-                    size: InfiniteSize.iconHeight,
-                  )
-                : Icon(
-                    Icons.play_arrow,
-                    size: InfiniteSize.iconHeight,
-                  ),
-            Text(
-              widget.text,
-              style: context.bodyMedium?.bold,
-            ),
-          ],
+        child: RichText(
+          maxLines: 2,
+          textWidthBasis: TextWidthBasis.longestLine,
+          text: TextSpan(
+            children: [
+              WidgetSpan(
+                alignment: PlaceholderAlignment.middle,
+                child: _isPlaying
+                    ? Icon(
+                        Icons.pause,
+                        size: InfiniteSize.iconHeight,
+                      )
+                    : Icon(
+                        Icons.play_arrow,
+                        size: InfiniteSize.iconHeight,
+                      ),
+              ),
+              TextSpan(
+                text: widget.text,
+                style: context.bodyLarge?.bold,
+              ),
+            ],
+          ),
         ),
       ),
     );

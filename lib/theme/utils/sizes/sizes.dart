@@ -23,7 +23,7 @@ class InfiniteFontSize {
   static double get priceMedium => 17;
   static double get priceLarge => 20;
 
-  static double get bodyLarge => 16;
+  static double get bodyLarge => 17;
   static double get bodyMedium => 15;
   static double get bodySmall => 13;
 

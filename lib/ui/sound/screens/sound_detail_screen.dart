@@ -114,14 +114,17 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
         child: Column(
           children: [
             _buildVideoCard(context, data),
+            InfiniteSpacing.normal,
             _buildInWordCard(context, data),
+            InfiniteSpacing.normal,
+            _buildInSentencesCard(context, data),
           ],
         ),
       ),
     );
   }
 
-  Card _buildVideoCard(BuildContext context, SoundDetail data) {
+  Widget _buildVideoCard(BuildContext context, SoundDetail data) {
     return Card(
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
@@ -155,8 +158,9 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
           Padding(
             padding: InfinitePadding.all,
             child: Wrap(
-              alignment: WrapAlignment.center,
+              alignment: WrapAlignment.start,
               runSpacing: InfiniteSize.paddingXS,
+              spacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.simpleExamples!)
                   AudioView(
@@ -189,8 +193,9 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
             Text(context.localizations.pair_title),
             InfiniteSpacing.small,
             Wrap(
-              alignment: WrapAlignment.center,
+              alignment: WrapAlignment.start,
               runSpacing: InfiniteSize.paddingXS,
+              spacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.compareExamples!)
                   AudioView(
@@ -201,19 +206,20 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
               ],
             ),
             InfiniteSpacing.small,
-            Text(context.localizations.long_record_advice(data.name!)),
+            Text(context.localizations.in_word_long_record_advice(data.name!)),
             InfiniteSpacing.small,
-            Text(context.localizations.long_repeat_advice),
+            Text(context.localizations.in_word_long_repeat_advice),
             InfiniteSpacing.small,
             InfiniteDivider.horizontal,
             InfiniteSpacing.small,
             Text(context.localizations.position_example_subtitle(data.name!)),
             InfiniteSpacing.small,
-            Text(context.localizations.listen_advice(data.name!)),
+            Text(context.localizations.in_word_listen_advice(data.name!)),
             InfiniteSpacing.small,
             Wrap(
-              alignment: WrapAlignment.center,
+              alignment: WrapAlignment.start,
               runSpacing: InfiniteSize.paddingXS,
+              spacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.positionExamples!)
                   AudioView(
@@ -224,9 +230,72 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
               ],
             ),
             InfiniteSpacing.small,
-            Text(context.localizations.short_record_advice(data.name!)),
+            Text(context.localizations.in_word_short_record_advice(data.name!)),
             InfiniteSpacing.small,
-            Text(context.localizations.short_repeat_advice),
+            Text(context.localizations.in_word_short_repeat_advice),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInSentencesCard(BuildContext context, SoundDetail data) {
+    return Card(
+      child: Padding(
+        padding: InfinitePadding.all,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              context.localizations.in_sentences,
+              style: context.titleLarge,
+            ),
+            InfiniteSpacing.small,
+            Text(context.localizations.in_sentence_subtitle(data.name!)),
+            InfiniteSpacing.small,
+            Text(context.localizations.pair_title),
+            InfiniteSpacing.small,
+            Wrap(
+              alignment: WrapAlignment.start,
+              runSpacing: InfiniteSize.paddingXS,
+              spacing: InfiniteSize.paddingXS,
+              children: [
+                for (final ex in data.sentenceExamples!)
+                  AudioView(
+                    audioPlayer: _audioPlayers[ex]!,
+                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
+                    text: ex.text!,
+                  ),
+              ],
+            ),
+            InfiniteSpacing.small,
+            Text(context.localizations.in_sentence_long_record_advice),
+            InfiniteSpacing.small,
+            Text(context.localizations.in_sentence_long_repeat_advice),
+            InfiniteSpacing.small,
+            InfiniteDivider.horizontal,
+            InfiniteSpacing.small,
+            Text(context.localizations.position_example_subtitle(data.name!)),
+            InfiniteSpacing.small,
+            Text(context.localizations.in_sentence_listen_advice(data.name!)),
+            InfiniteSpacing.small,
+            Wrap(
+              alignment: WrapAlignment.start,
+              runSpacing: InfiniteSize.paddingXS,
+              spacing: InfiniteSize.paddingXS,
+              children: [
+                for (final ex in data.practiceExamples!)
+                  AudioView(
+                    audioPlayer: _audioPlayers[ex]!,
+                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
+                    text: ex.text!,
+                  ),
+              ],
+            ),
+            InfiniteSpacing.small,
+            Text(context.localizations.in_sentence_short_record_advice(data.name!)),
+            InfiniteSpacing.small,
+            Text(context.localizations.in_sentence_short_repeat_advice),
           ],
         ),
       ),

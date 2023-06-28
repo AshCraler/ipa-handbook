@@ -2,13 +2,25 @@
     "helloWorld": "Hello World!",
     "setting": "Setting",
     "pronounce_instruction": "To make the /{sound}/ sound: \n",
+
+    
     "in_words": "In Words",
     "in_word_subtitle": "The /{sound}/ sound plays an important role in the difference between the paired words below.",
     "pair_title": "Listen to each pair, paying attention to how the first word differs from the second.",
-    "long_record_advice": "Record yourself repeating the words, making sure to focus on the pronunciation of /{sound}/. Then, compare it to the model recording. If you need help, check out the animated video to see exactly how to pronounce the /{sound}/ sound.",
-    "short_record_advice": "Record yourself repeating the words, making sure to focus on the pronunciation of /{sound}/. Then, compare it to the model recording.",
-    "long_repeat_advice": "Repeat this exercise several times a day. As with any skill, improving takes repetition and practice.",
-    "short_repeat_advice": "Repeat this exercise several times a day.",
+    "in_word_long_record_advice": "Record yourself repeating the words, making sure to focus on the pronunciation of /{sound}/. Then, compare it to the model recording. If you need help, check out the animated video to see exactly how to pronounce the /{sound}/ sound.",
+    "in_word_short_record_advice": "Record yourself repeating the words, making sure to focus on the pronunciation of /{sound}/. Then, compare it to the model recording.",
+    "in_word_long_repeat_advice": "Repeat this exercise several times a day. As with any skill, improving takes repetition and practice.",
+    "in_word_short_repeat_advice": "Repeat this exercise several times a day.",
     "position_example_subtitle": "Here are several common words that include /{sound}/. It's a good idea to be comfortable with their pronunciation.",
-    "listen_advice": "Listen to how each word is pronounced, focusing on /{sound}/. Notice how /{sound}/ can appear at the beginning, middle, or end of a word."
+    "in_word_listen_advice": "Listen to how each word is pronounced, focusing on /{sound}/. Notice how /{sound}/ can appear at the beginning, middle, or end of a word.",
+
+    "in_sentences": "In Sentences",
+    "in_sentence_subtitle": "It's important to go beyond single words when you practice sounds in English. Tongue twisters (difficult-to-pronounce sentences) are a great way to train your tongue to pronounce /k/ in a stream of speech.",
+    "sentence_title": "Listen to how each tongue twister is pronounced. Be sure to note the sounds or words that might be challenging for you, and how many times you will pronounce /{sound}/.",
+    "in_sentence_long_record_advice": "Record yourself repeating the tongue twister. Try it slowly first, and then gradually increase to a fluid, natural-feeling pace.",
+    "in_sentence_short_record_advice": "Record yourself repeating each sentence, focusing on the pronunciation of /{sound}/.",
+    "in_sentence_long_repeat_advice": "Repeat this exercise several times a day. You can try creating your own tongue twisters, too!",
+    "in_sentence_short_repeat_advice": "Repeat this exercise several times a day.",
+    "practice_example_subtitle": "Pronunciation practice is even more effective in a meaningful context. Here are several sentences with /k/ that you may find yourself saying frequently.",
+    "in_sentence_listen_advice": "Listen to how each sentence is pronounced. Which word(s) include /{sound}/?"
 }
