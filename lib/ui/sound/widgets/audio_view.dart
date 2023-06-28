@@ -53,7 +53,7 @@ class _AudioViewState extends State<AudioView> with SingleTickerProviderStateMix
           borderRadius: BorderRadius.circular(InfiniteSize.chipRadius),
         ),
         child: RichText(
-          maxLines: 2,
+          maxLines: 4,
           textWidthBasis: TextWidthBasis.longestLine,
           text: TextSpan(
             children: [
