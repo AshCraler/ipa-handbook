@@ -1,8 +1,6 @@
 import 'dart:convert';
 
-import 'compare_example.dart';
-import 'sentence_example.dart';
-import 'simple_example.dart';
+import 'example.dart';
 
 class SoundDetail {
   String? crawlKey;
@@ -12,11 +10,11 @@ class SoundDetail {
   String? guideTextVi;
   String? guideVideo;
   String? guideText;
-  List<SimpleExample>? simpleExamples;
-  List<CompareExample>? compareExamples;
-  List<dynamic>? positionExamples;
-  List<SentenceExample>? sentenceExamples;
-  List<dynamic>? practiceExamples;
+  List<Example>? simpleExamples;
+  List<Example>? compareExamples;
+  List<Example>? positionExamples;
+  List<Example>? sentenceExamples;
+  List<Example>? practiceExamples;
 
   SoundDetail({
     this.crawlKey,
@@ -47,16 +45,16 @@ class SoundDetail {
         guideVideo: data['guideVideo'] as String?,
         guideText: data['guideText'] as String?,
         simpleExamples: (data['simpleExamples'] as List<dynamic>?)
-            ?.map((e) => SimpleExample.fromMap(e as Map<String, dynamic>))
+            ?.map((e) => Example.fromMap(e as Map<String, dynamic>))
             .toList(),
         compareExamples: (data['compareExamples'] as List<dynamic>?)
-            ?.map((e) => CompareExample.fromMap(e as Map<String, dynamic>))
+            ?.map((e) => Example.fromMap(e as Map<String, dynamic>))
             .toList(),
-        positionExamples: data['positionExamples'] as List<dynamic>?,
+        positionExamples: data['positionExamples'] as List<Example>?,
         sentenceExamples: (data['sentenceExamples'] as List<dynamic>?)
-            ?.map((e) => SentenceExample.fromMap(e as Map<String, dynamic>))
+            ?.map((e) => Example.fromMap(e as Map<String, dynamic>))
             .toList(),
-        practiceExamples: data['practiceExamples'] as List<dynamic>?,
+        practiceExamples: data['practiceExamples'] as List<Example>?,
       );
 
   Map<String, dynamic> toMap() => {
@@ -94,11 +92,11 @@ class SoundDetail {
     String? guideTextVi,
     String? guideVideo,
     String? guideText,
-    List<SimpleExample>? simpleExamples,
-    List<CompareExample>? compareExamples,
-    List<dynamic>? positionExamples,
-    List<SentenceExample>? sentenceExamples,
-    List<dynamic>? practiceExamples,
+    List<Example>? simpleExamples,
+    List<Example>? compareExamples,
+    List<Example>? positionExamples,
+    List<Example>? sentenceExamples,
+    List<Example>? practiceExamples,
   }) {
     return SoundDetail(
       crawlKey: crawlKey ?? this.crawlKey,
