@@ -51,3 +51,4 @@ app.*.map.json
 # Environment
 # .env
 *.g.dart
+error.txt
