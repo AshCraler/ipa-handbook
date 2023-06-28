@@ -1,4 +1,14 @@
 {
-    "helloWorld": "Xin chào thế giới",
-    "setting": "Cài đặt"
+    "helloWorld": "Xin chào thế giới!",
+    "setting": "Cài đặt",
+    "pronounce_instruction": "Để tạo âm /{sound}/: \n",
+    "in_words": "Trong từ vựng",
+    "in_word_subtitle": "Âm /{sound}/ đóng vai trò quan trọng trong sự khác biệt giữa các từ ghép dưới đây.",
+    "pair_title": "Nghe từng cặp từ, chú ý vào cách từ đầu tiên khác với từ thứ hai.",
+    "long_record_advice": "Ghi âm lại bản thân đang lặp lại các từ, chắc chắn tập trung vào cách phát âm của âm /{sound}/. Sau đó, so sánh với bản ghi mẫu. Nếu bạn cần giúp đỡ, xem video hoạt hình để thấy cách phát âm chính xác âm /{sound}/.",
+    "short_record_advice": "Ghi âm lại bản thân đang lặp lại các từ, chắc chắn tập trung vào cách phát âm của âm /{sound}/. Sau đó, so sánh với bản ghi mẫu.",
+    "long_repeat_advice": "Lặp lại bài tập này mỗi ngày nhiều lần. Như bất kỳ kỹ năng nào khác, việc cải thiện đòi hỏi sự lặp đi lặp lại và thực hành.",
+    "short_repeat_advice": "Lặp lại bài tập này mỗi ngày nhiều lần.",
+    "position_example_subtitle": "Dưới đây là một số từ thông dụng bao gồm âm /{sound}/. Nên làm quen với cách phát âm của chúng.",
+    "listen_advice": "Nghe cách phát âm của từng từ, tập trung vào âm /{sound}/. Chú ý rằng âm /{sound}/ có thể xuất hiện ở đầu, giữa hoặc cuối của một từ."
 }

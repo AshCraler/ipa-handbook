@@ -1,6 +1,8 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:ipa_handbook/config/di/dependency_injection.dart';
+import 'package:ipa_handbook/l10n/infinite_localizations.dart';
+import 'package:ipa_handbook/models/sound_detail/example.dart';
 import 'package:ipa_handbook/theme/infinite_theme.dart';
 import 'package:ipa_handbook/ui/sound/widgets/audio_view.dart';
 import 'package:ipa_handbook/ui/sound/widgets/video_view.dart';
@@ -21,7 +23,7 @@ class SoundDetailScreen extends StatefulWidget {
 
 class _SoundDetailScreenState extends State<SoundDetailScreen> {
   late final Future<SoundDetail> _soundDetail;
-  final List<AudioPlayer> _audioPlayers = [];
+  final Map<Example, AudioPlayer> _audioPlayers = {};
 
   Future<SoundDetail> _fetchSoundDetail() async {
     final response = await getIt.get<DioClient>().getRequest<String>(
@@ -29,8 +31,24 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
         );
 
     final result = SoundDetail.fromJson(response);
-    for (final _ in result.simpleExamples!) {
-      _audioPlayers.add(AudioPlayer());
+    for (final ex in result.simpleExamples!) {
+      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+    }
+
+    for (final ex in result.compareExamples!) {
+      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+    }
+
+    for (final ex in result.positionExamples!) {
+      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+    }
+
+    for (final ex in result.practiceExamples!) {
+      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+    }
+
+    for (final ex in result.sentenceExamples!) {
+      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
     }
 
     return result;
@@ -44,8 +62,8 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
 
   @override
   void dispose() {
-    for (final player in _audioPlayers) {
-      player.dispose();
+    for (var element in _audioPlayers.entries) {
+      element.value.dispose();
     }
     super.dispose();
   }
@@ -89,9 +107,17 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
   }
 
   Widget _buildBody(BuildContext context, SoundDetail data) {
-    return ListView(
-      padding: InfinitePadding.all,
-      children: [_buildVideoCard(context, data), _buildInWordCard(context)],
+    return RawScrollbar(
+      thumbColor: context.colorScheme.tertiary,
+      child: SingleChildScrollView(
+        padding: InfinitePadding.all,
+        child: Column(
+          children: [
+            _buildVideoCard(context, data),
+            _buildInWordCard(context, data),
+          ],
+        ),
+      ),
     );
   }
 
@@ -112,9 +138,12 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
               text: TextSpan(
                 children: [
                   TextSpan(
-                      text: 'To make the /${widget.sound}/ sound: \n',
+                      text: context.localizations.pronounce_instruction(widget.sound),
                       style: context.titleMedium?.bold),
                   TextSpan(
+                    // text: context.localizations.localeName == 'en'
+                    //     ? data.guideText
+                    //     : data.guideTextVi,
                     text: data.guideText,
                     style: context.bodyMedium?.italic,
                   ),
@@ -124,15 +153,14 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
           ),
           InfiniteSpacing.small,
           Padding(
-            padding: InfinitePadding.horizontal,
+            padding: InfinitePadding.all,
             child: Wrap(
               alignment: WrapAlignment.center,
-              runSpacing: InfiniteSize.paddingXXS,
-              spacing: InfiniteSize.paddingXXS,
+              runSpacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.simpleExamples!)
                   AudioView(
-                    audioPlayer: _audioPlayers[data.simpleExamples!.indexOf(ex)],
+                    audioPlayer: _audioPlayers[ex]!,
                     sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
                     text: ex.text!,
                   ),
@@ -144,15 +172,63 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
     );
   }
 
-  Widget _buildInWordCard(BuildContext context) {
+  Widget _buildInWordCard(BuildContext context, SoundDetail data) {
     return Card(
-      child: Column(
-        children: [
-          Text(
-            'In Words',
-            style: context.titleLarge,
-          ),
-        ],
+      child: Padding(
+        padding: InfinitePadding.all,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              context.localizations.in_words,
+              style: context.titleLarge,
+            ),
+            InfiniteSpacing.small,
+            Text(context.localizations.in_word_subtitle(data.name!)),
+            InfiniteSpacing.small,
+            Text(context.localizations.pair_title),
+            InfiniteSpacing.small,
+            Wrap(
+              alignment: WrapAlignment.center,
+              runSpacing: InfiniteSize.paddingXS,
+              children: [
+                for (final ex in data.compareExamples!)
+                  AudioView(
+                    audioPlayer: _audioPlayers[ex]!,
+                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
+                    text: ex.text!,
+                  ),
+              ],
+            ),
+            InfiniteSpacing.small,
+            Text(context.localizations.long_record_advice(data.name!)),
+            InfiniteSpacing.small,
+            Text(context.localizations.long_repeat_advice),
+            InfiniteSpacing.small,
+            InfiniteDivider.horizontal,
+            InfiniteSpacing.small,
+            Text(context.localizations.position_example_subtitle(data.name!)),
+            InfiniteSpacing.small,
+            Text(context.localizations.listen_advice(data.name!)),
+            InfiniteSpacing.small,
+            Wrap(
+              alignment: WrapAlignment.center,
+              runSpacing: InfiniteSize.paddingXS,
+              children: [
+                for (final ex in data.positionExamples!)
+                  AudioView(
+                    audioPlayer: _audioPlayers[ex]!,
+                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
+                    text: ex.text!,
+                  ),
+              ],
+            ),
+            InfiniteSpacing.small,
+            Text(context.localizations.short_record_advice(data.name!)),
+            InfiniteSpacing.small,
+            Text(context.localizations.short_repeat_advice),
+          ],
+        ),
       ),
     );
   }

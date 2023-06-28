@@ -1,4 +1,14 @@
 {
     "helloWorld": "Hello World!",
-    "setting": "Setting"
-  }
+    "setting": "Setting",
+    "pronounce_instruction": "To make the /{sound}/ sound: \n",
+    "in_words": "In Words",
+    "in_word_subtitle": "The /{sound}/ sound plays an important role in the difference between the paired words below.",
+    "pair_title": "Listen to each pair, paying attention to how the first word differs from the second.",
+    "long_record_advice": "Record yourself repeating the words, making sure to focus on the pronunciation of /{sound}/. Then, compare it to the model recording. If you need help, check out the animated video to see exactly how to pronounce the /{sound}/ sound.",
+    "short_record_advice": "Record yourself repeating the words, making sure to focus on the pronunciation of /{sound}/. Then, compare it to the model recording.",
+    "long_repeat_advice": "Repeat this exercise several times a day. As with any skill, improving takes repetition and practice.",
+    "short_repeat_advice": "Repeat this exercise several times a day.",
+    "position_example_subtitle": "Here are several common words that include /{sound}/. It's a good idea to be comfortable with their pronunciation.",
+    "listen_advice": "Listen to how each word is pronounced, focusing on /{sound}/. Notice how /{sound}/ can appear at the beginning, middle, or end of a word."
+}
