@@ -33,11 +33,11 @@ class _AudioViewState extends State<AudioView> with SingleTickerProviderStateMix
           break;
         case PlayerState.completed:
         case PlayerState.paused:
-        case PlayerState.stopped:
-        case PlayerState.disposed:
           setState(() {
             _isPlaying = false;
           });
+          break;
+        default:
           break;
       }
     });
