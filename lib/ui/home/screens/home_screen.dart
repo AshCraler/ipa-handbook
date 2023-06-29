@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ipa_handbook/config/constants/assets.dart';
 import 'package:ipa_handbook/config/di/dependency_injection.dart';
+import 'package:ipa_handbook/l10n/infinite_localizations.dart';
 import 'package:ipa_handbook/theme/infinite_theme.dart';
 
 import '../../../config/router/screen_name.dart';
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Text(context.localizations.home_title),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),

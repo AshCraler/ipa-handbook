@@ -20,16 +20,26 @@ class SoundPreviewElement extends StatelessWidget {
         queryParameters: {"sound": soundPreview.name},
       ),
       child: Container(
-        padding: EdgeInsets.all(InfiniteSize.paddingXS),
+        padding: EdgeInsets.symmetric(
+            horizontal: InfiniteSize.paddingXS, vertical: InfiniteSize.paddingL),
         decoration: BoxDecoration(
           border: Border.all(color: context.outlineColor),
-          borderRadius: BorderRadius.circular(InfiniteSize.cardRadius),
+          borderRadius: BorderRadius.circular(InfiniteSize.buttonRadius),
+          boxShadow: InfiniteShadow.boxShadow,
+          color: context.surfaceColor,
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text('/${soundPreview.name!}/'),
-            Text(soundPreview.example!),
+            Text(
+              '/${soundPreview.name!}/',
+              style: context.titleLarge?.bold,
+            ),
+            Expanded(
+              child: Center(
+                child: Text(soundPreview.example!),
+              ),
+            ),
           ],
         ),
       ),
