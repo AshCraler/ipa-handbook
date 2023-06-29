@@ -5,8 +5,8 @@ import 'package:ipa_handbook/theme/infinite_theme.dart';
 
 import '../../../models/sound_preview.dart';
 
-class PreviewElement extends StatelessWidget {
-  const PreviewElement({
+class SoundPreviewElement extends StatelessWidget {
+  const SoundPreviewElement({
     super.key,
     required this.soundPreview,
   });

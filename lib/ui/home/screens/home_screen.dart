@@ -10,7 +10,7 @@ import 'package:ipa_handbook/theme/infinite_theme.dart';
 import '../../../config/router/screen_name.dart';
 import '../../../models/sound_preview.dart';
 import '../../../network/network.dart';
-import '../widgets/sound_element_view.dart';
+import '../widgets/sound_preview_element.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisSpacing: InfiniteSize.spacingXS,
                       ),
                       itemBuilder: (context, index) {
-                        return PreviewElement(
+                        return SoundPreviewElement(
                           soundPreview: soundsMap[key]![index],
                         );
                       },
