@@ -1,6 +1,7 @@
 {
     "helloWorld": "Hello World!",
     "setting": "Setting",
+    "setting_choose_language": "Choose Language",
     "pronounce_instruction": "To make the /{sound}/ sound: \n",
 
     

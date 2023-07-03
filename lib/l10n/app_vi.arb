@@ -1,6 +1,7 @@
 {
     "helloWorld": "Xin chào thế giới!",
     "setting": "Cài đặt",
+    "setting_choose_language": "Chọn ngôn ngữ",
     "pronounce_instruction": "Để tạo âm /{sound}/: \n",
 
 
