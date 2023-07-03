@@ -6,11 +6,9 @@ class AudioView extends StatefulWidget {
   const AudioView({
     super.key,
     required this.audioPlayer,
-    required this.sourceUrl,
     required this.text,
   });
   final AudioPlayer audioPlayer;
-  final String sourceUrl;
   final String text;
 
   @override
@@ -19,22 +17,29 @@ class AudioView extends StatefulWidget {
 
 class _AudioViewState extends State<AudioView> with SingleTickerProviderStateMixin {
   bool _isPlaying = false;
-  Duration _position = Duration.zero;
 
   @override
   void initState() {
     super.initState();
-    widget.audioPlayer.onPositionChanged.listen((Duration p) {
-      setState(() {
-        _position = p;
-      });
-    });
 
-    widget.audioPlayer.onPlayerComplete.listen((_) {
-      setState(() {
-        _isPlaying = false;
-        _position = Duration.zero;
-      });
+    widget.audioPlayer.setReleaseMode(ReleaseMode.stop);
+
+    widget.audioPlayer.onPlayerStateChanged.listen((PlayerState event) {
+      switch (event) {
+        case PlayerState.playing:
+          setState(() {
+            _isPlaying = true;
+          });
+          break;
+        case PlayerState.completed:
+        case PlayerState.paused:
+          setState(() {
+            _isPlaying = false;
+          });
+          break;
+        default:
+          break;
+      }
     });
   }
 
@@ -82,9 +87,9 @@ class _AudioViewState extends State<AudioView> with SingleTickerProviderStateMix
       if (!_isPlaying) {
         _isPlaying = true;
         try {
-          widget.audioPlayer.play(widget.audioPlayer.source!, position: _position);
+          widget.audioPlayer.resume();
         } catch (e) {
-          print(e);
+          print('error when playing audio: fwoiefjoei');
         }
       } else {
         _isPlaying = false;

@@ -43,19 +43,47 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
     }
 
     for (final ex in result.compareExamples!) {
-      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+      final _ap = AudioPlayer();
+      try {
+        final _ = await _ap.setSourceUrl('${DioClient.baseUrlTest}data/${ex.audio!}');
+      } catch (error) {
+        print('error at: ${widget.sound} => ${ex.text} => ${ex.audio!}');
+        continue;
+      }
+      _audioPlayers.putIfAbsent(ex, () => _ap);
     }
 
     for (final ex in result.positionExamples!) {
-      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+      final _ap = AudioPlayer();
+      try {
+        final _ = await _ap.setSourceUrl('${DioClient.baseUrlTest}data/${ex.audio!}');
+      } catch (error) {
+        print('error at: ${widget.sound} => ${ex.text} => ${ex.audio!}');
+        continue;
+      }
+      _audioPlayers.putIfAbsent(ex, () => _ap);
     }
 
     for (final ex in result.practiceExamples!) {
-      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+      final _ap = AudioPlayer();
+      try {
+        final _ = await _ap.setSourceUrl('${DioClient.baseUrlTest}data/${ex.audio!}');
+      } catch (error) {
+        print('error at: ${widget.sound} => ${ex.text} => ${ex.audio!}');
+        continue;
+      }
+      _audioPlayers.putIfAbsent(ex, () => _ap);
     }
 
     for (final ex in result.sentenceExamples!) {
-      _audioPlayers.putIfAbsent(ex, () => AudioPlayer());
+      final _ap = AudioPlayer();
+      try {
+        final _ = await _ap.setSourceUrl('${DioClient.baseUrlTest}data/${ex.audio!}');
+      } catch (error) {
+        print('error at: ${widget.sound} => ${ex.text} => ${ex.audio!}');
+        continue;
+      }
+      _audioPlayers.putIfAbsent(ex, () => _ap);
     }
 
     return result;
@@ -173,7 +201,6 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
                   _audioPlayers[ex] != null
                       ? AudioView(
                           audioPlayer: _audioPlayers[ex]!,
-                          sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
                           text: ex.text!,
                         )
                       : const SizedBox.shrink(),
@@ -207,11 +234,12 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
               spacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.compareExamples!)
-                  AudioView(
-                    audioPlayer: _audioPlayers[ex]!,
-                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
-                    text: ex.text!,
-                  ),
+                  _audioPlayers[ex] != null
+                      ? AudioView(
+                          audioPlayer: _audioPlayers[ex]!,
+                          text: ex.text!,
+                        )
+                      : const SizedBox.shrink(),
               ],
             ),
             InfiniteSpacing.small,
@@ -231,11 +259,12 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
               spacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.positionExamples!)
-                  AudioView(
-                    audioPlayer: _audioPlayers[ex]!,
-                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
-                    text: ex.text!,
-                  ),
+                  _audioPlayers[ex] != null
+                      ? AudioView(
+                          audioPlayer: _audioPlayers[ex]!,
+                          text: ex.text!,
+                        )
+                      : const SizedBox.shrink(),
               ],
             ),
             InfiniteSpacing.small,
@@ -270,11 +299,12 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
               spacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.sentenceExamples!)
-                  AudioView(
-                    audioPlayer: _audioPlayers[ex]!,
-                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
-                    text: ex.text!,
-                  ),
+                  _audioPlayers[ex] != null
+                      ? AudioView(
+                          audioPlayer: _audioPlayers[ex]!,
+                          text: ex.text!,
+                        )
+                      : const SizedBox.shrink(),
               ],
             ),
             InfiniteSpacing.small,
@@ -294,11 +324,12 @@ class _SoundDetailScreenState extends State<SoundDetailScreen> {
               spacing: InfiniteSize.paddingXS,
               children: [
                 for (final ex in data.practiceExamples!)
-                  AudioView(
-                    audioPlayer: _audioPlayers[ex]!,
-                    sourceUrl: '${DioClient.baseUrlTest}data/${ex.audio!}',
-                    text: ex.text!,
-                  ),
+                  _audioPlayers[ex] != null
+                      ? AudioView(
+                          audioPlayer: _audioPlayers[ex]!,
+                          text: ex.text!,
+                        )
+                      : const SizedBox.shrink(),
               ],
             ),
             InfiniteSpacing.small,
