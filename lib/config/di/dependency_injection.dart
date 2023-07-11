@@ -5,5 +5,5 @@ import '../../network/network.dart';
 final getIt = GetIt.instance;
 
 void configureDependencyInjection() async {
-  getIt.registerSingleton<DioClient>(DioClient());
+  getIt.registerSingleton<DioClient>(DioClient.instance);
 }

@@ -11,10 +11,12 @@ class DioClient {
 
   late Dio _dio;
 
-  DioClient() {
+  DioClient._() {
     _dio = _createDio();
     _dio.interceptors.add(DioInterceptor());
   }
+
+  static DioClient get instance => DioClient._();
 
   Dio get dio => _dio;
 
