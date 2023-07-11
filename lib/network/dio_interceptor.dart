@@ -10,6 +10,9 @@ final log = Logger(
 );
 
 class DioInterceptor extends Interceptor {
+  final Interceptor _interceptor;
+
+  DioInterceptor(this._interceptor);
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     String headerMessage = "";
@@ -47,7 +50,7 @@ class DioInterceptor extends Interceptor {
       "$queryParams"
       "❖ Body data: $prettyJson",
     );
-    super.onRequest(options, handler);
+    _interceptor.onRequest(options, handler);
   }
 
   @override
@@ -62,7 +65,7 @@ class DioInterceptor extends Interceptor {
     //   stackTrace: dioError.stackTrace,
     //   reason: "Failed to fetch data",
     // );
-    super.onError(err, handler);
+    _interceptor.onError(err, handler);
   }
 
   @override
@@ -71,10 +74,8 @@ class DioInterceptor extends Interceptor {
     response.headers.forEach((k, v) => headerMessage += '► $k: $v\n');
 
     const JsonEncoder encoder = JsonEncoder.withIndent('  ');
-    final String prettyJson = encoder
-        .convert(response.data)
-        .replaceAll("\n", " ")
-        .replaceAll(" ", "");
+    final String prettyJson =
+        encoder.convert(response.data).replaceAll("\n", " ").replaceAll(" ", "");
 
     log.d(
       // ignore: unnecessary_null_comparison
@@ -84,6 +85,6 @@ class DioInterceptor extends Interceptor {
       "❖ Results : \n"
       "Response: $prettyJson",
     );
-    super.onResponse(response, handler);
+    _interceptor.onResponse(response, handler);
   }
 }

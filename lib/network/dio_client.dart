@@ -13,7 +13,7 @@ class DioClient {
 
   DioClient._() {
     _dio = _createDio();
-    _dio.interceptors.add(DioInterceptor());
+    _dio.interceptors.add(DioInterceptor(const Interceptor()));
   }
 
   static DioClient get instance => DioClient._();
